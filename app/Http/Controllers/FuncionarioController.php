@@ -15,7 +15,7 @@ class FuncionarioController extends Controller
     public function index()
     {
         $funcionarios = Funcionario::all();
-        return view('index')->with('funcionarios', $funcionarios);
+        return view('funcionarios.index')->with('funcionarios', $funcionarios);
         //return view('index', ['funcionarios'=>$funcionarios]);
     }
 
@@ -26,7 +26,7 @@ class FuncionarioController extends Controller
      */
     public function create()
     {
-        //
+        return view('funcionarios.cadastrar');
     }
 
     /**
