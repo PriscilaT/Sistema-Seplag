@@ -8,6 +8,7 @@
 </head>
 <body>
 
+    <a href="/funcionario/cadastrar">Cadastrar novo funcionário</a>
 
     <h1>Oi</h1>
     @foreach($funcionarios as $funcionario)

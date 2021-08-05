@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Funcionario;
+use Carbon\Carbon;
 
 class FuncionarioController extends Controller
 {
@@ -37,7 +38,28 @@ class FuncionarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $funcionario = new Funcionario();
+         //dd(request()->all()['idFuncionario']);
+        $funcionario->idFuncionario = request('idFuncionario');
+        $funcionario->nome = request('nome');
+        $funcionario->rg = request('rg');
+        $funcionario->cpf = request('cpf');
+        $funcionario->nascimento = request('nascimento');
+        $funcionario->genero = request('genero');
+        $funcionario->estado_civil = request('estado_civil');
+        $funcionario->email = request('email');
+        $funcionario->telefone = request('telefone');
+        $funcionario->cep = request('cep');
+        $funcionario->rua = request('rua');
+        $funcionario->n° = request('n°');
+        $funcionario->bairro = request('bairro');
+        $funcionario->cidade = request('cidade');
+        $funcionario->estado = request('estado');
+        $funcionario->observação = request('observação');
+
+        $funcionario->save();
+    
+        return redirect('/funcionario');
     }
 
     /**

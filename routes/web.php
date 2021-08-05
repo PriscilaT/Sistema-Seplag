@@ -20,4 +20,16 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+###########################
+## Rotas do funcionário ##
+###########################
 Route::get ('/funcionario', 'FuncionarioController@index');
+Route::get('/funcionario/cadastrar', 'FuncionarioController@create');
+//Route::get('visualizar/{id}', 'InstitutoController@show');
+//Route::get('/institutos/editar/{id}', 'InstitutoController@edit')->middleware('admin');
+//Route::get('/institutos/excluir/{id}', 'InstitutoController@excluir')->middleware('admin');
+
+Route::post('/funcionario/cadastrar', 'FuncionarioController@store')->name("funcionario.store");
+//Route::patch('/institutos/editar/{id}', 'InstitutoController@update')->name("institutos.update")->middleware('admin');
+//Route::delete('/institutos/{id}', 'InstitutoController@destroy')->name("institutos.destroy")->middleware('admin');
