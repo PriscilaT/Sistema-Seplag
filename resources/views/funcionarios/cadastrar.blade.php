@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <h1>Cadastrar Novo Funcionário</h1>
 
-            <a href="/funcionarios" class="btn btn-danger btn-sm">Voltar</a>
+            <a href="/funcionario" class="btn btn-danger btn-sm">Voltar</a>
 
             <br>
             

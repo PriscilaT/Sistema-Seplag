@@ -1,24 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Funcionários</title>
-</head>
-<body>
+@extends('layouts.app')
 
-    <a href="/funcionario/cadastrar">Cadastrar novo funcionário</a>
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1>Funcionários</h1>
+            <a href="/home" class="btn btn-danger btn-sm">Voltar</a>
+            <br>
+            <a href="/funcionario/cadastrar">Cadastrar Funcionário</a>
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                <tr>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        NOME
+                    </th>
+                    <th>
+                        VISUALIZAR
+                    </th>
+                    <th>
+                        EDITAR
+                    </th>
+                    <th>
+                        EXCLUIR
+                    </th>
+                </tr>
+                </thead>
 
-    <h1>Oi</h1>
-    @foreach($funcionarios as $funcionario)
-        <tr>
-            <td>
-                {{ $funcionario->nome }}
-            </td>        
-        </tr>
-    @endforeach
-    
-    
-</body>
-</html>
+                <tbody>
+                @foreach($funcionarios as $funcionario)
+                <tr>
+                    <td>
+                        {{ $funcionario->idFuncionario }}
+                    </td>
+                    <td>
+                        {{ $funcionario->nome }}
+                    </td>
+                    <td>
+                        <a href="/funcionario/visualizar/{{ $funcionario->idFuncionario }}">VISUALIZAR</a>
+                    </td>
+                    <td>
+                        <a href="/funcionario/editar/{{ $funcionario->idFuncionario }}">EDITAR</a>
+                    </td>
+                    <td>
+                        <a href="/funcionario/excluir/{{ $funcionario->idFuncionario }}">EXCLUIR</a>
+                    </td>
+                </tr>
+                @endforeach
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
+@endsection

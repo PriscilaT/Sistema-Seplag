@@ -68,9 +68,10 @@ class FuncionarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($idFuncionario)
     {
-        //
+        $funcionario = Funcionario::FindOrFail($idFuncionario);
+        return view('funcionarios.visualizar')->with('funcionario', $funcionario);
     }
 
     /**
@@ -79,9 +80,10 @@ class FuncionarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($idFuncionario)
     {
-        //
+        $funcionario = Funcionario::FindOrFail($idFuncionario);
+        return view('funcionarios.editar')->with('funcionario', $funcionario);
     }
 
     /**
@@ -91,19 +93,46 @@ class FuncionarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $idFuncionario)
     {
-        //
+        $funcionario = Funcionario::FindOrFail($idFuncionario);
+        $funcionario->idFuncionario = request('idFuncionario');
+        $funcionario->nome = request('nome');
+        $funcionario->rg = request('rg');
+        $funcionario->cpf = request('cpf');
+        $funcionario->nascimento = request('nascimento');
+        $funcionario->genero = request('genero');
+        $funcionario->estado_civil = request('estado_civil');
+        $funcionario->email = request('email');
+        $funcionario->telefone = request('telefone');
+        $funcionario->cep = request('cep');
+        $funcionario->rua = request('rua');
+        $funcionario->n° = request('n°');
+        $funcionario->bairro = request('bairro');
+        $funcionario->cidade = request('cidade');
+        $funcionario->estado = request('estado');
+        $funcionario->observação = request('observação');
+
+        $funcionario->save();
+   
+       return redirect('/funcionario');
     }
 
+
+    public function excluir($idFuncionario)
+    {
+      $funcionario = Funcionario::findOrFail($idFuncionario);
+      return view('funcionarios.excluir')->with('funcionario', $funcionario);
+    }
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($idFuncionario)
     {
-        //
+        Funcionario::FindOrFail($idFuncionario)->delete();
+        return redirect('/funcionario');
     }
 }

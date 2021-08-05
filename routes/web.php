@@ -26,13 +26,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 ###########################
 Route::get ('/funcionario', 'FuncionarioController@index');
 Route::get('/funcionario/cadastrar', 'FuncionarioController@create');
-//Route::get('visualizar/{id}', 'InstitutoController@show');
-//Route::get('/institutos/editar/{id}', 'InstitutoController@edit')->middleware('admin');
-//Route::get('/institutos/excluir/{id}', 'InstitutoController@excluir')->middleware('admin');
+Route::get('/funcionario/visualizar/{idFuncionario}', 'FuncionarioController@show');
+Route::get('/funcionario/editar/{idFuncionario}', 'FuncionarioController@edit');
+Route::get('/funcionario/excluir/{idFuncionario}', 'FuncionarioController@excluir');
 
 Route::post('/funcionario/cadastrar', 'FuncionarioController@store')->name("funcionario.store");
-//Route::patch('/institutos/editar/{id}', 'InstitutoController@update')->name("institutos.update")->middleware('admin');
-//Route::delete('/institutos/{id}', 'InstitutoController@destroy')->name("institutos.destroy")->middleware('admin');
+Route::patch('/funcionarios/editar/{idFuncionario}', 'FuncionarioController@update')->name("funcionario.update");
+Route::delete('/funcionario/{idFuncionario}', 'FuncionarioController@destroy')->name("funcionario.destroy");
+
 
 ###########################
 ## Rotas do curso #########
@@ -68,4 +69,3 @@ Route::post('/cargo/cadastrar', 'CargoController@store')->name("cargo.store");
 Route::get ('/projeto', 'ProjetoController@index');
 Route::get('/projeto/cadastrar', 'ProjetoController@create');
 Route::post('/projeto/cadastrar', 'ProjetoController@store')->name("projeto.store");
-
