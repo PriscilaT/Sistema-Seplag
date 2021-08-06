@@ -61,23 +61,38 @@ Route::post('/instituicao/cadastrar', 'InstituicaoController@store')->name("inst
 Route::patch('/instituicao/editar/{idInstituicao}', 'InstituicaoController@update')->name("instituicao.update");
 Route::delete('/instituicao/{idInstituicao}', 'InstituicaoController@destroy')->name("instituicao.destroy");
 
-###########################
-## Rotas de tecnologia ####
-###########################
-Route::get ('/tecnologia', 'TecnologiaController@index');
-Route::get('/tecnologia/cadastrar', 'TecnologiaController@create');
-Route::post('/tecnologia/cadastrar', 'TecnologiaController@store')->name("tecnologia.store");
 
 ###########################
 ## Rotas de cargo #########
 ###########################
 Route::get ('/cargo', 'CargoController@index');
 Route::get('/cargo/cadastrar', 'CargoController@create');
+Route::get('/cargo/visualizar/{idCargo}', 'CargoController@show');
+Route::get('/cargo/editar/{idCargo}', 'CargoController@edit');
+Route::get('/cargo/excluir/{idCargo}', 'CargoController@excluir');
+
 Route::post('/cargo/cadastrar', 'CargoController@store')->name("cargo.store");
+Route::patch('/cargo/editar/{idCargo}', 'CargoController@update')->name("cargo.update");
+Route::delete('/cargo/{idCargo}', 'CargoController@destroy')->name("cargo.destroy");
+
+###########################
+## Rotas de tecnologia ####
+###########################
+Route::get ('/tecnologia', 'TecnologiaController@index');
+Route::get('/tecnologia/cadastrar', 'TecnologiaController@create');
+
+
+Route::post('/tecnologia/cadastrar', 'TecnologiaController@store')->name("tecnologia.store");
 
 ###########################
 ## Rotas de projeto #######
 ###########################
 Route::get ('/projeto', 'ProjetoController@index');
 Route::get('/projeto/cadastrar', 'ProjetoController@create');
+Route::get('/projeto/visualizar/{idProjeto}', 'ProjetoController@show');
+Route::get('/projeto/editar/{idProjeto}', 'ProjetoController@edit');
+Route::get('/projeto/excluir/{idProjeto}', 'ProjetoController@excluir');
+
 Route::post('/projeto/cadastrar', 'ProjetoController@store')->name("projeto.store");
+Route::patch('/projeto/editar/{idProjeto}', 'ProjetoController@update')->name("projeto.update");
+Route::delete('/projeto/{idProjeto}', 'ProjetoController@destroy')->name("projeto.destroy");
