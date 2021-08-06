@@ -80,7 +80,6 @@ class InstituicaoController extends Controller
     public function update(Request $request, $idInstituicao)
     {
         $instituicao = Instituicao::FindOrFail($idInstituicao);
-        $instituicao->idInstituicao = request('idInstituicao');
         $instituicao->nome = request('nome');
 
         $instituicao->save();
