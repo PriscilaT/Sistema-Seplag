@@ -65,7 +65,7 @@ class CursoController extends Controller
      */
     public function edit($idCurso)
     {
-        $curso = Curso::FindOrFail($idCurso);
+        $curso = Curso::FindOrFail($idCurso);        
         return view('cursos.editar')->with('curso', $curso);
     }
 

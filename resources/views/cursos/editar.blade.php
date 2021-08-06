@@ -12,22 +12,13 @@
 
             <form action="{{ route('curso.update', $curso->idCurso) }}" method="POST">
                 @method('PATCH')
-
-                <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="idCurso">
-                        ID do Curso:
-                    </label>
-                    <input class="col-sm-9" type="text" name="idCurso">
-                </div>
                 
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label" for="nome">
                         Nome do Curso:
                     </label>
-                    <input class="col-sm-9" type="text" name="nome">
+                    <input  value="<?= $curso->nome  ?>" class="col-sm-9" type="text" name="nome">
                 </div>
-
-   
 
                 <div class="form-group row">
                     <div class="col-sm-10">

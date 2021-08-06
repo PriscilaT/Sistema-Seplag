@@ -17,7 +17,6 @@ class FuncionarioController extends Controller
     {
         $funcionarios = Funcionario::all();
         return view('funcionarios.index')->with('funcionarios', $funcionarios);
-        //return view('index', ['funcionarios'=>$funcionarios]);
     }
 
     /**
@@ -39,7 +38,6 @@ class FuncionarioController extends Controller
     public function store(Request $request)
     {
         $funcionario = new Funcionario();
-         //dd(request()->all()['idFuncionario']);
         $funcionario->nome = request('nome');
         $funcionario->rg = request('rg');
         $funcionario->cpf = request('cpf');
