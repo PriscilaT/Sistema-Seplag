@@ -134,7 +134,7 @@
 
                 <div class="form-group row">
                     <div class="col-sm-10">
-                        <a href="/funionarios" class="btn btn-secondary">Cancelar</a>
+                        <a href="/funcionario" class="btn btn-secondary">Cancelar</a>
                         <button type="submit" class="btn btn-primary">Cadastrar</button>
                     </div>
                 </div>

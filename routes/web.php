@@ -66,7 +66,13 @@ Route::delete('/instituicao/{idInstituicao}', 'InstituicaoController@destroy')->
 ###########################
 Route::get ('/tecnologia', 'TecnologiaController@index');
 Route::get('/tecnologia/cadastrar', 'TecnologiaController@create');
+Route::get('/tecnologia/visualizar/{idTecnologia}', 'TecnologiaController@show');
+Route::get('/tecnologia/editar/{idTecnologia}', 'TecnologiaController@edit');
+Route::get('/tecnologia/excluir/{idTecnologia}', 'TecnologiaController@excluir');
+
 Route::post('/tecnologia/cadastrar', 'TecnologiaController@store')->name("tecnologia.store");
+Route::patch('/tecnologia/editar/{idTecnologia}', 'TecnologiaController@update')->name("tecnologia.update");
+Route::delete('/tecnologia/{idTecnologia}', 'TecnologiaController@destroy')->name("tecnologia.destroy");
 
 ###########################
 ## Rotas de cargo #########

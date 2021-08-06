@@ -79,7 +79,6 @@ class CursoController extends Controller
     public function update(Request $request, $idCurso)
     {
         $curso = Curso::FindOrFail($idCurso);
-        $curso->idCurso = request('idCurso');
         $curso->nome = request('nome');
 
         $curso->save();
