@@ -38,7 +38,6 @@ class ProjetoController extends Controller
     public function store(Request $request)
     {
         $projeto = new Projeto();
-        $projeto->idProjeto = request('idProjeto');
         $projeto->nome = request('nome');
         $projeto->inicio = request('inicio');
         $projeto->fim = request('fim');

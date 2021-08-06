@@ -38,7 +38,6 @@ class CargoController extends Controller
     public function store(Request $request)
     {
         $cargo = new Cargo();
-        $cargo->idCargo = request('idCargo');
         $cargo->nome = request('nome');
         $cargo->descricao = request('descricao');
 

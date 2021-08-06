@@ -11,14 +11,6 @@
             <br>
             
             <form action="{{ route('tecnologia.store') }}" method="POST">
-
-                <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="idTecnologia">
-                        ID da Tecnologia:
-                    </label>
-                    <input class="col-sm-9" type="text" name="idTecnologia">
-                </div>
-
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label" for="nome">
                         Nome da Tecnologia:

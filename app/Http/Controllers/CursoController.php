@@ -38,7 +38,6 @@ class CursoController extends Controller
     public function store(Request $request)
     {
         $curso = new Curso();
-        $curso->idCurso = request('idCurso');
         $curso->nome = request('nome');
 
         $curso->save();
