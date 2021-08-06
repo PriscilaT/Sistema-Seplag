@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Tecnologia;
+use App\Models\Tecnologia;
 use Carbon\Carbon;
 
 class TecnologiaController extends Controller
@@ -40,7 +40,7 @@ class TecnologiaController extends Controller
         $tecnologia = new Tecnologia();
         $tecnologia->idTecnologia = request('idTecnologia');
         $tecnologia->nome = request('nome');
-        $tecnologia->descrição = request('descricao');
+        $tecnologia->descricao = request('descricao');
 
         $tecnologia->save();
     

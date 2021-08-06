@@ -64,7 +64,7 @@ Route::get('/cargo/cadastrar', 'CargoController@create');
 Route::post('/cargo/cadastrar', 'CargoController@store')->name("cargo.store");
 
 ###########################
-## Rotas de projeto #########
+## Rotas de projeto #######
 ###########################
 Route::get ('/projeto', 'ProjetoController@index');
 Route::get('/projeto/cadastrar', 'ProjetoController@create');

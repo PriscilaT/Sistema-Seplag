@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Projeto;
+use App\Models\Projeto;
 use Carbon\Carbon;
 
 class ProjetoController extends Controller

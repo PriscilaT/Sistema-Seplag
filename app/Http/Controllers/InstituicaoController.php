@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Instituicao;
+use App\Models\Instituicao;
 use Carbon\Carbon;
 
 class InstituicaoController extends Controller
@@ -38,7 +38,7 @@ class InstituicaoController extends Controller
     public function store(Request $request)
     {
         $instituicao = new Instituicao();
-        $instituicao->idInstituição = request('idInstituição');
+        $instituicao->idInstituicao = request('idInstituicao');
         $instituicao->nome = request('nome');
 
         $instituicao->save();
