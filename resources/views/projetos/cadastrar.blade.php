@@ -11,14 +11,6 @@
             <br>
             
             <form action="{{ route('projeto.store') }}" method="POST">
-
-                <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="idProjeto">
-                        ID do Projeto:
-                    </label>
-                    <input class="col-sm-9" type="text" name="idProjeto">
-                </div>
-
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label" for="nome">
                         Nome do Projeto:

@@ -40,7 +40,6 @@ class FuncionarioController extends Controller
     {
         $funcionario = new Funcionario();
          //dd(request()->all()['idFuncionario']);
-        $funcionario->idFuncionario = request('idFuncionario');
         $funcionario->nome = request('nome');
         $funcionario->rg = request('rg');
         $funcionario->cpf = request('cpf');
@@ -97,7 +96,6 @@ class FuncionarioController extends Controller
     public function update(Request $request, $idFuncionario)
     {
         $funcionario = Funcionario::FindOrFail($idFuncionario);
-        $funcionario->idFuncionario = request('idFuncionario');
         $funcionario->nome = request('nome');
         $funcionario->rg = request('rg');
         $funcionario->cpf = request('cpf');

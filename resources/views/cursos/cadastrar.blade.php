@@ -13,13 +13,6 @@
             <form action="{{ route('curso.store') }}" method="POST">
 
                 <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="idCurso">
-                        ID do Curso:
-                    </label>
-                    <input class="col-sm-9" type="text" name="idCurso">
-                </div>
-
-                <div class="form-group row">
                     <label class="col-sm-3 col-form-label" for="nome">
                         Nome do Curso:
                     </label>

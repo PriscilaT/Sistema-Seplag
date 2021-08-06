@@ -38,7 +38,6 @@ class InstituicaoController extends Controller
     public function store(Request $request)
     {
         $instituicao = new Instituicao();
-        $instituicao->idInstituicao = request('idInstituicao');
         $instituicao->nome = request('nome');
 
         $instituicao->save();
