@@ -51,11 +51,12 @@ class FuncionarioController extends Controller
         $funcionario->telefone = request('telefone');
         $funcionario->cep = request('cep');
         $funcionario->rua = request('rua');
-        $funcionario->n° = request('n°');
+        $funcionario->numero = request('numero');
         $funcionario->bairro = request('bairro');
         $funcionario->cidade = request('cidade');
         $funcionario->estado = request('estado');
-        $funcionario->observação = request('observação');
+        $funcionario->complemento = request('complemento');
+        $funcionario->senha = request('senha');
 
         $funcionario->save();
     
@@ -107,11 +108,12 @@ class FuncionarioController extends Controller
         $funcionario->telefone = request('telefone');
         $funcionario->cep = request('cep');
         $funcionario->rua = request('rua');
-        $funcionario->n° = request('n°');
+        $funcionario->numero = request('numero');
         $funcionario->bairro = request('bairro');
         $funcionario->cidade = request('cidade');
         $funcionario->estado = request('estado');
-        $funcionario->observação = request('observação');
+        $funcionario->complemento = request('complemento');
+        $funcionario->senha = request('senha');
 
         $funcionario->save();
    

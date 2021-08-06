@@ -52,9 +52,10 @@ class CursoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($idCurso)
     {
-        //
+        $curso = Curso::FindOrFail($idCurso);
+        return view('cursos.visualizar')->with('curso', $curso);
     }
 
     /**
@@ -63,9 +64,10 @@ class CursoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($idCurso)
     {
-        //
+        $curso = Curso::FindOrFail($idCurso);
+        return view('cursos.editar')->with('curso', $curso);
     }
 
     /**
@@ -75,9 +77,22 @@ class CursoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $idCurso)
     {
-        //
+        $curso = Curso::FindOrFail($idCurso);
+        $curso->idCurso = request('idCurso');
+        $curso->nome = request('nome');
+
+        $curso->save();
+    
+        return redirect('/curso');
+    }
+
+
+    public function excluir($idCurso)
+    {
+      $curso = Curso::findOrFail($idCurso);
+      return view('cursos.excluir')->with('curso', $curso);
     }
 
     /**
@@ -86,8 +101,9 @@ class CursoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($idCurso)
     {
-        //
+        Curso::FindOrFail($idCurso)->delete();
+        return redirect('/curso');
     }
 }

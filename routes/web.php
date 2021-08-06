@@ -40,7 +40,13 @@ Route::delete('/funcionario/{idFuncionario}', 'FuncionarioController@destroy')->
 ###########################
 Route::get ('/curso', 'CursoController@index');
 Route::get('/curso/cadastrar', 'CursoController@create');
+Route::get('/curso/visualizar/{idCurso}', 'CursoController@show');
+Route::get('/curso/editar/{idCurso}', 'CursoController@edit');
+Route::get('/curso/excluir/{idCurso}', 'CursoController@excluir');
+
 Route::post('/curso/cadastrar', 'CursoController@store')->name("curso.store");
+Route::patch('/cursos/editar/{idCurso}', 'CursoController@update')->name("curso.update");
+Route::delete('/curso/{idCurso}', 'CursoController@destroy')->name("curso.destroy");
 
 ###########################
 ## Rotas da instituicao ###
