@@ -54,9 +54,10 @@ class ProjetoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($idProjeto)
     {
-        //
+        $projeto = Projeto::FindOrFail($idProjeto);
+        return view('projetos.visualizar')->with('projeto', $projeto);
     }
 
     /**
@@ -65,9 +66,10 @@ class ProjetoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($idProjeto)
     {
-        //
+        $projeto = Projeto::FindOrFail($idProjeto);        
+        return view('projetos.editar')->with('projeto', $projeto);
     }
 
     /**
@@ -77,10 +79,23 @@ class ProjetoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $idProjeto)
     {
-        //
+        $projeto = Projeto::FindOrFail($idProjeto);
+        $projeto->idprojeto = request('idProjeto');
+        $projeto->nome = request('nome');
+
+        $projeto->save();
+    
+        return redirect('/projeto');
     }
+
+    public function excluir($idProjeto)
+    {
+      $projeto = projeto::findOrFail($idProjeto);
+      return view('projetos.excluir')->with('projeto', $projeto);
+    }
+
 
     /**
      * Remove the specified resource from storage.
@@ -88,8 +103,10 @@ class ProjetoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($idProjeto)
     {
-        //
+        Projeto::FindOrFail($idProjeto)->delete();
+        return redirect('/projeto');
+    
     }
 }

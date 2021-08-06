@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <h1>Projetos</h1>
-            <a href="/home" class="btn btn-danger btn-sm">Voltar</a>
+            <a href="/" class="btn btn-danger btn-sm">Voltar</a>
             <br>
             <a href="/projeto/cadastrar">Cadastrar novo projeto</a>
             <table class="table table-hover">

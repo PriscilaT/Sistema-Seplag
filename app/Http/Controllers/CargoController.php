@@ -66,7 +66,8 @@ class CargoController extends Controller
      */
     public function edit($idCargo)
     {
-        //
+        $cargo = cargo::FindOrFail($idCargo);
+        return view('cargos.editar')->with('cargo', $cargo);
     }
 
     /**
@@ -78,7 +79,20 @@ class CargoController extends Controller
      */
     public function update(Request $request, $idCargo)
     {
-        //
+        $cargo = Cargo::FindOrFail($idCargo);
+        $cargo->idCargo = request('idCargo');
+        $cargo->nome = request('nome');
+
+        $cargo->save();
+    
+        return redirect('/cargo');
+    }
+
+
+    public function excluir($idCargo)
+    {
+      $cargo = Cargo::findOrFail($idCargo);
+      return view('cargos.excluir')->with('cargo', $cargo);
     }
 
     /**
@@ -89,6 +103,7 @@ class CargoController extends Controller
      */
     public function destroy($idCargo)
     {
-        //
+        Cargo::FindOrFail($idCargo)->delete();
+        return redirect('/Cargo');
     }
 }

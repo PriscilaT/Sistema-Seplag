@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <h1>Cargos</h1>
-            <a href="/home" class="btn btn-danger btn-sm">Voltar</a>
+            <a href="/" class="btn btn-danger btn-sm">Voltar</a>
             <br>
             <a href="/cargo/cadastrar">Cadastrar novo cargo</a>
             <table class="table table-hover">
@@ -33,19 +33,19 @@
                 @foreach($cargos as $cargo)
                 <tr>
                     <td>
-                        {{ $cargo->idCargos }}
+                        {{ $cargo->idCargo}}
                     </td>
                     <td>
                         {{ $cargo->nome }}
                     </td>
                     <td>
-                        <a href="/cargo/visualizar/{{ $cargo->idCargos }}">VISUALIZAR</a>
+                        <a href="/cargo/visualizar/{{ $cargo->idCargo}}">VISUALIZAR</a>
                     </td>
                     <td>
-                        <a href="/cargo/editar/{{ $cargo->idCargos }}">EDITAR</a>
+                        <a href="/cargo/editar/{{ $cargo->idCargo}}">EDITAR</a>
                     </td>
                     <td>
-                        <a href="/cargo/excluir/{{ $cargo->idCargos }}">EXCLUIR</a>
+                        <a href="/cargo/excluir/{{ $cargo->idCargo}}">EXCLUIR</a>
                     </td>
                 </tr>
                 @endforeach
