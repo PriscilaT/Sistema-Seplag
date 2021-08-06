@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Sistema Seplag</title>
+        
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
@@ -18,6 +19,14 @@
                 font-weight: 200;
                 height: 100vh;
                 margin: 0;
+            }
+
+            .page-holder {
+                min-height: 100vh;
+            }
+
+            .bg-cover {
+                background-size: cover !important;
             }
 
             .full-height {
@@ -64,7 +73,9 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+    <div style="background: url(https://source.unsplash.com/aJTiW00qqtI/1600x900)" class="page-holder bg-cover">
+   
+        <div  class="flex-center position-ref full-height ">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -86,10 +97,12 @@
 
 
                 <div class="links">
-                    <a href="/funcionario/cadastrar">Cadastrar </a>
-                    <a href="/funcionario/visualizar">Visualizar </a>
-                    <a href="/funcionario/editar">Editar </a>
-                    <a href="/funcionario/excluir">Excluir </a>
+                    <a href="/funcionario">Funcionários </a>
+                    <a href="/curso">Cursos </a>
+                    <a href="/instituicao">Instituições </a>
+                    <a href="/cargo">Cargos </a>
+                    <a href="/tecnologia">Tecnologias </a>
+                    <a href="/projeto">Projetos </a>
                     
             </div>
         </div>

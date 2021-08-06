@@ -1,23 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instituição</title>
-</head>
-<body>
+@extends('layouts.app')
 
-    <a href="/instituicao/cadastrar">Cadastrar nova instituição</a>
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1>Instituições</h1>
+            <a href="/home" class="btn btn-danger btn-sm">Voltar</a>
+            <br>
+            <a href="/instituicao/cadastrar">Cadastrar nova Instituição</a>
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                <tr>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        NOME
+                    </th>
+                    <th>
+                        VISUALIZAR
+                    </th>
+                    <th>
+                        EDITAR
+                    </th>
+                    <th>
+                        EXCLUIR
+                    </th>
+                </tr>
+                </thead>
 
-    <h1>Instituição</h1>
-    @foreach($instituicoes as $instituicao)
-        <tr>
-            <td>
-                <div> {{ $instituicao->nome }} </div>
-            </td>
-        </tr>
-    @endforeach
-    
-</body>
-</html>
+                <tbody>
+                @foreach($instituicoes as $instituicao)
+                <tr>
+                    <td>
+                        {{ $instituicao->idInstituicao }}
+                    </td>
+                    <td>
+                        {{ $instituicao->nome }}
+                    </td>
+                    <td>
+                        <a href="/instituicao/visualizar/{{ $instituicao->idInstituicao }}">VISUALIZAR</a>
+                    </td>
+                    <td>
+                        <a href="/instituicao/editar/{{ $instituicao->idInstituicao }}">EDITAR</a>
+                    </td>
+                    <td>
+                        <a href="/instituicao/excluir/{{ $instituicao->idInstituicao }}">EXCLUIR</a>
+                    </td>
+                </tr>
+                @endforeach
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
+@endsection
