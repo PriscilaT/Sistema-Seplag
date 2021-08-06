@@ -53,7 +53,13 @@ Route::delete('/curso/{idCurso}', 'CursoController@destroy')->name("curso.destro
 ###########################
 Route::get ('/instituicao', 'InstituicaoController@index');
 Route::get('/instituicao/cadastrar', 'InstituicaoController@create');
+Route::get('/instituicao/visualizar/{idInstituicao}', 'InstituicaoController@show');
+Route::get('/instituicao/editar/{idInstituicao}', 'InstituicaoController@edit');
+Route::get('/instituicao/excluir/{idInstituicao}', 'InstituicaoController@excluir');
+
 Route::post('/instituicao/cadastrar', 'InstituicaoController@store')->name("instituicao.store");
+Route::patch('/instituicao/editar/{idInstituicao}', 'InstituicaoController@update')->name("instituicao.update");
+Route::delete('/instituicao/{idInstituicao}', 'InstituicaoController@destroy')->name("instituicao.destroy");
 
 ###########################
 ## Rotas de tecnologia ####

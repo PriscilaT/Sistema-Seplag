@@ -52,9 +52,10 @@ class CargoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($idCargo)
     {
-        //
+        $cargo = Cargo::FindOrFail($idCargo);
+        return view('cargos.visualizar')->with('cargo', $cargo);
     }
 
     /**
@@ -63,7 +64,7 @@ class CargoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($idCargo)
     {
         //
     }
@@ -75,7 +76,7 @@ class CargoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $idCargo)
     {
         //
     }
@@ -86,7 +87,7 @@ class CargoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($idCargo)
     {
         //
     }

@@ -51,9 +51,11 @@ class InstituicaoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($idInstituicao)
     {
-        //
+        $instituicao = Instituicao::FindOrFail($idInstituicao);
+        return view('instituicoes.visualizar')->with('instituicao', $instituicao);
+
     }
 
     /**
@@ -62,9 +64,10 @@ class InstituicaoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($idInstituicao)
     {
-        //
+        $instituicao = Instituicao::FindOrFail($idInstituicao);
+        return view('instituicoes.editar')->with('instituicao', $instituicao);
     }
 
     /**
@@ -74,9 +77,22 @@ class InstituicaoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $idInstituicao)
     {
-        //
+        $instituicao = Instituicao::FindOrFail($idInstituicao);
+        $instituicao->idInstituicao = request('idInstituicao');
+        $instituicao->nome = request('nome');
+
+        $instituicao->save();
+    
+        return redirect('/instituicao');
+    }
+
+
+    public function excluir($idInstituicao)
+    {
+      $instituicao = Instituicao::findOrFail($idInstituicao);
+      return view('instituicoes.excluir')->with('instituicao', $instituicao);
     }
 
     /**
@@ -85,8 +101,9 @@ class InstituicaoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($idInstituicao)
     {
-        //
+        Instituicao::FindOrFail($idInstituicao)->delete();
+        return redirect('/instituicao');
     }
 }

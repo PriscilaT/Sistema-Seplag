@@ -73,7 +73,7 @@
         </style>
     </head>
     <body>
-    <div style="background: url(https://source.unsplash.com/aJTiW00qqtI/1600x900)" class="page-holder bg-cover">
+    <div style="background: url(https://source.unsplash.com/mjeQon0Mh_Q/1600x900)" class="page-holder bg-cover">
    
         <div  class="flex-center position-ref full-height ">
             @if (Route::has('login'))
