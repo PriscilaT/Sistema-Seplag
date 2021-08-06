@@ -13,15 +13,15 @@
             <form action="{{ route('instituicao.store') }}" method="POST">
 
                 <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="idinstituição">
-                        ID da Instituicao:
+                    <label class="col-sm-3 col-form-label" for="idInstituicao">
+                        ID da Instituição:
                     </label>
-                    <input class="col-sm-9" type="text" name="idInstituição">
+                    <input class="col-sm-9" type="text" name="idInstituicao">
                 </div>
 
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label" for="nome">
-                        Nome da Instituicao:
+                        Nome da Instituição:
                     </label>
                     <input class="col-sm-9" type="text" name="nome">
                 </div>

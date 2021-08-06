@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Cargo;
+use App\Models\Cargo;
 use Carbon\Carbon;
 
 class CargoController extends Controller
@@ -40,6 +40,7 @@ class CargoController extends Controller
         $cargo = new Cargo();
         $cargo->idCargo = request('idCargo');
         $cargo->nome = request('nome');
+        $cargo->descricao = request('descricao');
 
         $cargo->save();
     

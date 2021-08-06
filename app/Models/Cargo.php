@@ -1,11 +1,11 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Projeto extends Model
+class Cargo extends Model
 {
-    protected $table = 'projeto';
+    protected $table = 'cargo';
     public $timestamps = false;
 }
