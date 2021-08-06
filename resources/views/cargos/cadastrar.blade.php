@@ -13,13 +13,6 @@
             <form action="{{ route('cargo.store') }}" method="POST">
 
                 <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="idCargo">
-                        ID do Cargo:
-                    </label>
-                    <input class="col-sm-9" type="text" name="idCargo">
-                </div>
-
-                <div class="form-group row">
                     <label class="col-sm-3 col-form-label" for="nome">
                         Nome do Cargo:
                     </label>

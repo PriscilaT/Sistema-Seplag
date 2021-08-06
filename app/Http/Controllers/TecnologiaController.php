@@ -38,7 +38,6 @@ class TecnologiaController extends Controller
     public function store(Request $request)
     {
         $tecnologia = new Tecnologia();
-        $tecnologia->idTecnologia = request('idTecnologia');
         $tecnologia->nome = request('nome');
         $tecnologia->descricao = request('descricao');
 

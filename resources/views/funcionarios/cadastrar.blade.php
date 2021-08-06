@@ -11,14 +11,6 @@
             <br>
             
             <form action="{{ route('funcionario.store') }}" method="POST">
-
-                <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="idFuncionario">
-                        ID do Funcionário:
-                    </label>
-                    <input class="col-sm-9" type="text" name="idFuncionario">
-                </div>
-
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label" for="nome">
                         Nome do Funcionário:
@@ -44,7 +36,7 @@
                     <label class="col-sm-3 col-form-label" for=" nascimento">
                         nascimento:
                     </label>
-                    <input class="col-sm-9" type="text" name=" nascimento">
+                    <input type="date" name="nascimento">
                 </div>
 
                 <div class="form-group row">
@@ -56,16 +48,23 @@
 
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label" for="estado_civil">
-                        estado_civil:
+                        estado civil:
                     </label>
-                    <input class="col-sm-9" type="text" name="estado_civil">
+                    <select name="estado_civil">
+                        <option value="SOLTEIRO">Solteiro</option>
+                        <option value="CASADO">Casado</option>
+                        <option value="DIVORCIADO">Divorciado</option>
+                        <option value="VIÚVO">Viúvo</option>
+                        <option value="SEPARADO">Separado</option>
+                        <option value="UNIÃO ESTÁVEL">União Estável</option>
+                    </select>
                 </div>
 
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label" for="email">
                         email:
                     </label>
-                    <input class="col-sm-9" type="text" name="email">
+                    <input class="col-sm-9" type="email" name="email">
                 </div>
 
                 <div class="form-group row">
@@ -128,7 +127,7 @@
                     <label class="col-sm-3 col-form-label" for="senha">
                         senha:
                     </label>
-                    <input class="col-sm-9" type="text" name="senha">
+                    <input class="col-sm-9" type="password" name="senha">
                 </div>
 
                 
