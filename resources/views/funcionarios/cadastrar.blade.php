@@ -90,10 +90,10 @@
                 </div>
 
                 <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="n°">
-                        n°:
+                    <label class="col-sm-3 col-form-label" for="numero">
+                        numero:
                     </label>
-                    <input class="col-sm-9" type="text" name="n°">
+                    <input class="col-sm-9" type="text" name="numero">
                 </div>
 
                 <div class="form-group row">
@@ -118,10 +118,17 @@
                 </div>
 
                 <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="observação">
-                        observação:
+                    <label class="col-sm-3 col-form-label" for="complemento">
+                        complemento:
                     </label>
-                    <textarea class="col-sm-9" name="observação" rows="4"></textarea>
+                    <textarea class="col-sm-9" name="complemento" rows="4"></textarea>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" for="senha">
+                        senha:
+                    </label>
+                    <input class="col-sm-9" type="text" name="senha">
                 </div>
 
                 
