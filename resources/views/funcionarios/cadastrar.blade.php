@@ -13,37 +13,57 @@
             <form action="{{ route('funcionario.store') }}" method="POST">
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label" for="nome">
-                        Nome do Funcionário:
+                        Nome do Funcionário*:
                     </label>
-                    <input class="col-sm-9" type="text" name="nome">
+                    <input value="{{ old('nome') }}" class="col-sm-9" type="text" name="nome">
+                    @error('nome')
+                        <small class="text-red-500 mt-2 text-sm">
+                            {{ $message }}
+                        </small>
+                    @enderror
                 </div>
 
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label" for="rg">
-                        rg:
+                        rg*:
                     </label>
-                    <input class="col-sm-9" type="text" name="rg">
+                    <input value="{{ old('rg') }}" class="col-sm-9" type="text" name="rg">
+                    @error('rg')
+                        <small class="text-red-500 mt-2 text-sm">
+                            {{ $message }}
+                        </small>
+                    @enderror
                 </div>
 
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label" for="cpf">
-                        cpf:
+                        cpf*:
                     </label>
-                    <input class="col-sm-9" type="text" name="cpf">
+                    <input value="{{ old('cpf') }}" class="col-sm-9" type="text" name="cpf">
+                    @error('cpf')
+                        <small class="text-red-500 mt-2 text-sm">
+                            {{ $message }}
+                        </small>
+                    @enderror
                 </div>
 
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label" for=" nascimento">
-                        nascimento:
+                        nascimento*:
                     </label>
-                    <input type="date" name="nascimento">
+                    <input value="{{ old('nascimento') }}" type="date" name="nascimento">
+                    @error('nascimento')
+                        <small class="text-red-500 mt-2 text-sm">
+                            {{ $message }}
+                        </small>
+                    @enderror
                 </div>
 
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label" for="genero">
                         genero:
                     </label>
-                    <input class="col-sm-9" type="text" name="genero">
+                    <input value="{{ old('genero') }}" class="col-sm-9" type="text" name="genero">
                 </div>
 
                 <div class="form-group row">
@@ -62,75 +82,127 @@
 
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label" for="email">
-                        email:
+                        email*:
                     </label>
-                    <input class="col-sm-9" type="email" name="email">
+                    <input value="{{ old('email') }}" class="col-sm-9" type="email" name="email">
+                    @error('email')
+                        <small class="text-red-500 mt-2 text-sm">
+                            {{ $message }}
+                        </small>
+                    @enderror
                 </div>
 
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label" for="telefone">
-                        telefone:
+                        telefone*:
                     </label>
-                    <input class="col-sm-9" type="text" name="telefone">
+                    <input value="{{ old('telefone') }}" class="col-sm-9" type="text" name="telefone">
+                    @error('telefone')
+                        <small class="text-red-500 mt-2 text-sm">
+                            {{ $message }}
+                        </small>
+                    @enderror
                 </div>
 
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label" for="cep">
-                        cep:
+                        cep*:
                     </label>
-                    <input class="col-sm-9" type="text" name="cep">
+                    <input value="{{ old('cep') }}" class="col-sm-9" type="text" name="cep">
+                    @error('cep')
+                        <small class="text-red-500 mt-2 text-sm">
+                            {{ $message }}
+                        </small>
+                    @enderror
                 </div>
 
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label" for="rua">
-                        rua:
+                        rua*:
                     </label>
-                    <input class="col-sm-9" type="text" name="rua">
+                    <input value="{{ old('rua') }}" class="col-sm-9" type="text" name="rua">
+                    @error('rua')
+                        <small class="text-red-500 mt-2 text-sm">
+                            {{ $message }}
+                        </small>
+                    @enderror
                 </div>
 
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label" for="numero">
-                        numero:
+                        numero*:
                     </label>
-                    <input class="col-sm-9" type="text" name="numero">
+                    <input value="{{ old('numero') }}" class="col-sm-9" type="text" name="numero">
+                    @error('numero')
+                        <small class="text-red-500 mt-2 text-sm">
+                            {{ $message }}
+                        </small>
+                    @enderror
                 </div>
 
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label" for="bairro">
-                        bairro:
+                        bairro*:
                     </label>
-                    <input class="col-sm-9" type="text" name="bairro">
+                    <input value="{{ old('bairro') }}" class="col-sm-9" type="text" name="bairro">
+                    @error('bairro')
+                        <small class="text-red-500 mt-2 text-sm">
+                            {{ $message }}
+                        </small>
+                    @enderror
                 </div>
 
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label" for="cidade">
-                        cidade:
+                        cidade*:
                     </label>
-                    <input class="col-sm-9" type="text" name="cidade">
+                    <input value="{{ old('cidade') }}" class="col-sm-9" type="text" name="cidade">
+                    @error('cidade')
+                        <small class="text-red-500 mt-2 text-sm">
+                            {{ $message }}
+                        </small>
+                    @enderror
                 </div>
 
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label" for="estado">
-                        estado:
+                        estado*:
                     </label>
-                    <input class="col-sm-9" type="text" name="estado">
+                    <input value="{{ old('estado') }}" class="col-sm-9" type="text" name="estado">
+                    @error('estado')
+                        <small class="text-red-500 mt-2 text-sm">
+                            {{ $message }}
+                        </small>
+                    @enderror
+
                 </div>
 
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label" for="complemento">
                         complemento:
                     </label>
-                    <textarea class="col-sm-9" name="complemento" rows="4"></textarea>
+                    <textarea class="col-sm-9" name="complemento" rows="4">{{ old('complemento') }}</textarea>
                 </div>
 
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label" for="senha">
                         senha:
                     </label>
-                    <input class="col-sm-9" type="password" name="senha">
+                    <input class="col-sm-9" type="password" id="senha" name="senha">
                 </div>
 
-                
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" for="senha_confirmation">
+                        confirmar senha:
+                    </label>
+                    <input class="col-sm-9" type="password" id="senha_confirmation" name="senha_confirmation">
+
+                    @error('senha')
+                        <small class="text-red-500 mt-2 text-sm">
+                            {{ $message }}
+                        </small>
+                    @enderror
+                </div>
 
                 <div class="form-group row">
                     <div class="col-sm-10">
