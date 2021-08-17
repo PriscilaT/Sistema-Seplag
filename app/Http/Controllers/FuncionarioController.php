@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Funcionario;
-use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -84,12 +83,12 @@ class FuncionarioController extends Controller
         $funcionario->cidade = request('cidade');
         $funcionario->estado = request('estado');
         $funcionario->complemento = request('complemento');
-        $funcionario->senha = Hash::make($request->password);
+        $funcionario->senha = Hash::make($request->senha);
 
         $funcionario->save();
         
         auth()->attempt($request->only('cpf', 'senha'));
-        
+
         return redirect('/funcionario');
     }
 
