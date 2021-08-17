@@ -1,11 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
+
+
+<div style="display:flex">
+@include('layouts.sidebar')
+
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <h1>Tecnologia</h1>
-            <a href="/" class="btn btn-danger btn-sm">Voltar</a>
+            <a href="/home" class="btn btn-danger btn-sm">Voltar</a>
             <br>
             <a href="/tecnologia/cadastrar">Cadastrar nova tecnologia</a>
             <table class="table table-hover">
@@ -54,5 +60,6 @@
             </table>
         </div>
     </div>
+</div>
 </div>
 @endsection

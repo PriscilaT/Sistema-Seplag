@@ -1,9 +1,14 @@
 @extends('layouts.app')
-
 @section('content')
+
+<div style="display:flex">
+@include('layouts.sidebar')
+
 <div class="container">
-    <div class="row justify-content-center">
+    
+    <div class="row justify-content-left">
         <div class="col-md-8">
+            
         
             <div class="card">
                 <div class="card-header">{{ __('Página do ADMIN') }}</div>
@@ -16,17 +21,12 @@
                         @endif
                     <div class="content">
                     <div class="title m-b-md">
-                        Sistema SEPLAG 
+                        Informações do funcionario logado 
                     </div>
 
 
                     <div class="links">
-                        <a href="/funcionario">Funcionários </a><br>
-                        <a href="/curso">Cursos </a><br>
-                        <a href="/instituicao">Instituições </a><br>
-                        <a href="/cargo">Cargos </a><br>
-                        <a href="/tecnologia">Tecnologias </a><br>
-                        <a href="/projeto">Projetos </a><br>
+                        
                         
                     </div>
                 </div>
@@ -34,5 +34,6 @@
             </div> 
         </div>                       
     </div>
+</div>
 </div>
 @endsection

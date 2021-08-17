@@ -15,6 +15,13 @@ class FuncionarioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function profile()
+    {
+        $funcionarios = Funcionario::all();
+        return view('profile')->with('funcionarios', $funcionarios);
+    }
+
     public function index()
     {
         $funcionarios = Funcionario::all();

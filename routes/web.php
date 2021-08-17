@@ -21,9 +21,13 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+
 ###########################
 ## Rotas do funcionário ###
 ###########################
+
+Route::get('/profile', 'FuncionarioController@profile')->name('profile');
 Route::get ('/funcionario', 'FuncionarioController@index');
 Route::get('/funcionario/cadastrar', 'FuncionarioController@create');
 Route::get('/funcionario/visualizar/{idFuncionario}', 'FuncionarioController@show');
