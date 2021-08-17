@@ -24,14 +24,14 @@
                     <label class="col-sm-3 col-form-label" for="rg">
                         rg:
                     </label>
-                    <input value="<?= $funcionario->rg ?>" class="col-sm-9" type="text" name="rg">
+                    <input style="background: rgba(0, 0, 0, 0); border: 1px solid #aaa" value="<?= $funcionario->rg ?>" class="col-sm-9" type="text" name="rg">
                 </div>
 
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label" for="cpf">
                         cpf:
                     </label>
-                    <input value="<?= $funcionario->cpf ?>" class="col-sm-9" type="text" name="cpf">
+                    <input disabled style="border: none; background: none" value="<?= $funcionario->cpf ?>" class="col-sm-9" type="text" name="cpf">
                 </div>
 
                 <div class="form-group row">

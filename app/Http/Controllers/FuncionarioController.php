@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Funcionario;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Hash;
+
 
 class FuncionarioController extends Controller
 {
@@ -37,6 +39,28 @@ class FuncionarioController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'nome' => 'required|max:255',
+            'rg' => 'required',
+            'cpf' => 'required',
+            'nascimento' => 'required',
+            'email' => 'required|email|max:255',
+            'telefone' => 'required',
+            'cep' => 'required',
+            'rua' => 'required',
+            'numero' => 'required',
+            'bairro' => 'required',
+            'cidade' => 'required',
+            'estado' => 'required',
+            'senha' => 'required|min:8|confirmed',
+        ], [
+            'required' => 'O campo :attribute é obrigatório',
+            'max' => 'O campo :attribute excedeu o limite de caracteres (:max)',
+            'email' => 'O email digitado não é valido',
+            'min' => 'A senha deve ter no mínimo :min caracteres',
+            'confirmed' => 'As senhas digitadas não coincidem'
+        ]);
+        
         $funcionario = new Funcionario();
         $funcionario->nome = request('nome');
         $funcionario->rg = request('rg');
@@ -53,10 +77,12 @@ class FuncionarioController extends Controller
         $funcionario->cidade = request('cidade');
         $funcionario->estado = request('estado');
         $funcionario->complemento = request('complemento');
-        $funcionario->senha = request('senha');
+        $funcionario->senha = Hash::make($request->password);
 
         $funcionario->save();
-    
+        
+        auth()->attempt($request->only('cpf', 'senha'));
+        
         return redirect('/funcionario');
     }
 

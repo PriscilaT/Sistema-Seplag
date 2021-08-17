@@ -104,6 +104,6 @@ class CargoController extends Controller
     public function destroy($idCargo)
     {
         Cargo::FindOrFail($idCargo)->delete();
-        return redirect('/Cargo');
+        return redirect('/cargo');
     }
 }
