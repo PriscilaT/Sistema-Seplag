@@ -52,9 +52,10 @@ class TecnologiaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($idTecnologia)
     {
-        //
+        $tecnologia = Tecnologia::FindOrFail($idTecnologia);
+        return view('tecnologias.visualizar')->with('tecnologia', $tecnologia);
     }
 
     /**
@@ -63,9 +64,10 @@ class TecnologiaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($idTecnologia)
     {
-        //
+        $tecnologia = Tecnologia::FindOrFail($idTecnologia);
+        return view('tecnologias.editar')->with('tecnologia', $tecnologia);
     }
 
     /**
@@ -75,9 +77,19 @@ class TecnologiaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $idTecnologia)
     {
-        //
+        $tecnologia = Tecnologia::FindOrFail($idTecnologia);
+
+        $tecnologia->save();
+
+        return redirect('/tecnologia');
+    }
+
+    public function excluir($idTecnologia)
+    {
+      $tecnologia = Tecnologia::findOrFail($idTecnologia);
+      return view('tecnologias.excluir')->with('tecnologia', $tecnologia);
     }
 
     /**
@@ -86,8 +98,9 @@ class TecnologiaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($idTecnologia)
     {
-        //
+        Tecnologia::FindOrFail($idTecnologia)->delete();
+        return redirect('/tecnologia');
     }
 }
