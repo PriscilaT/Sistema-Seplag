@@ -7,43 +7,43 @@
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-        <a href="/home" class="nav-link active" aria-current="page">
+        <a href="/home" class="{{ Request::path() ==  'home' ? 'nav-link active' : 'nav-link'  }}" aria-current="page">
             <svg class="bi me-2" width="16" height="16"><use xlink:href="#perfil"></use></svg>
             Perfil 
         </a>
         </li>
         <li>
-        <a href="/funcionario" class="nav-link link-dark">
+        <a href="/funcionario" class="{{ Request::path() ==  'funcionario' ? 'nav-link active' : 'nav-link'  }}">
             <svg class="bi me-2" width="16" height="16"><use xlink:href="#funcionario"></use></svg>
             Funcionários
         </a>
         </li>
         <li>
-        <a href="/curso" class="nav-link link-dark">
+        <a href="/curso" class="{{ Request::path() ==  'curso' ? 'nav-link active' : 'nav-link'  }}">
             <svg class="bi me-2" width="16" height="16"><use xlink:href="#curso"></use></svg>
             Cursos
         </a>
         </li>
         <li>
-        <a href="/instituicao" class="nav-link link-dark">
+        <a href="/instituicao" class="{{ Request::path() ==  'instituicao' ? 'nav-link active' : 'nav-link'  }}">
             <svg class="bi me-2" width="16" height="16"><use xlink:href="#instituicao"></use></svg>
             Instituições
         </a>
         </li>
         <li>
-        <a href="/cargo" class="nav-link link-dark">
+        <a href="/cargo" class="{{ Request::path() ==  'cargo' ? 'nav-link active' : 'nav-link'  }}">
             <svg class="bi me-2" width="16" height="16"><use xlink:href="#cargo"></use></svg>
             Cargos
         </a>
         </li>
         <li>
-        <a href="tecnologia" class="nav-link link-dark">
+        <a href="tecnologia" class="{{ Request::path() ==  'tecnologia' ? 'nav-link active' : 'nav-link'  }}">
             <svg class="bi me-2" width="16" height="16"><use xlink:href="#tecnologia"></use></svg>
             Tecnologias
         </a>
         </li>
         <li>
-        <a href="/projeto" class="nav-link link-dark">
+        <a href="/projeto" class="{{ Request::path() ==  'projeto' ? 'nav-link active' : 'nav-link'  }}">
             <svg class="bi me-2" width="16" height="16"><use xlink:href="#projeto"></use></svg>
             Projetos
         </a>
